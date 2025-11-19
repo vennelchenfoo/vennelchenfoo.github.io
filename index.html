@@ -3,160 +3,346 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venz - Data Science & AI Portfolio</title>
-    
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/animations.css">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Vennel - Portfolio</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Data Science & AI Bootcamp student at WBS Coding School, specializing in MLOps and AI workflow automation">
-    <meta name="keywords" content="data science, AI, machine learning, MLOps, Python, SQL, n8n, automation">
+    <meta name="description" content="Vennel's portfolio - Data Science & AI student at WBS Coding School">
+    <meta name="keywords" content="data science, AI, machine learning, MLOps, Python, SQL">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Venz - Data Science & AI Portfolio">
-    <meta property="og:description" content="Data Science & AI student preparing for MLOps internship">
+    <meta property="og:title" content="Vennel - Portfolio">
+    <meta property="og:description" content="Data Science & AI Portfolio - Coming Soon">
     <meta property="og:url" content="https://vennelchenfoo.me">
     <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Animated background particles */
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 15s infinite;
+        }
+        
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 12s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 2s; animation-duration: 15s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 4s; animation-duration: 18s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 0s; animation-duration: 20s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 3s; animation-duration: 14s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 5s; animation-duration: 16s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 1s; animation-duration: 13s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 2s; animation-duration: 17s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 4s; animation-duration: 19s; }
+        .particle:nth-child(10) { left: 95%; animation-delay: 6s; animation-duration: 15s; }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.4;
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1);
+                opacity: 0;
+            }
+        }
+        
+        .container {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+            max-width: 90%;
+            animation: fadeInUp 1s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .greeting {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 900;
+            color: white;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 4px 20px rgba(0, 0, 0, 0.2);
+            letter-spacing: -2px;
+            animation: slideIn 0.8s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .status {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem 3rem;
+            display: inline-block;
+            animation: slideInRight 0.8s ease;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .status-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: rotate 4s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .status-text {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: white;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .progress-bar {
+            width: 300px;
+            max-width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            margin: 1.5rem auto;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #fff, #f0f0f0);
+            border-radius: 10px;
+            width: 0%;
+            animation: loading 3s ease-in-out infinite;
+        }
+        
+        @keyframes loading {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 0%; }
+        }
+        
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            animation: fadeIn 1.2s ease;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .coming-soon {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            animation: pulse 2s ease infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .greeting {
+                font-size: 3rem;
+                letter-spacing: -1px;
+            }
+            
+            .status {
+                padding: 1.5rem 2rem;
+            }
+            
+            .status-text {
+                font-size: 1.3rem;
+            }
+            
+            .progress-bar {
+                width: 250px;
+            }
+            
+            .social-links {
+                gap: 1rem;
+            }
+            
+            .social-link {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .greeting {
+                font-size: 2.5rem;
+            }
+            
+            .status-icon {
+                font-size: 2.5rem;
+            }
+            
+            .status-text {
+                font-size: 1.1rem;
+            }
+            
+            .coming-soon {
+                font-size: 0.8rem;
+                letter-spacing: 1px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="container">
-            <div class="nav-wrapper">
-                <a href="#" class="nav-logo">
-                    <span class="logo-text">Venz</span>
-                </a>
-                <ul class="nav-menu" id="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <button class="nav-toggle" id="nav-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
+    <!-- Animated particles background -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <h1 class="greeting">Hi, I'm Vennel</h1>
+        
+        <div class="status">
+            <div class="status-icon">⚙️</div>
+            <p class="status-text">This page is still under construction</p>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
             </div>
+            <p class="coming-soon">Coming Soon</p>
         </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h5 class="hero-subtitle">Hello, I'm</h5>
-                    <h1 class="hero-title gradient-text">Venz</h1>
-                    <h3 class="hero-role">Data Science & AI Student</h3>
-                    <p class="hero-description">
-                        WBS Coding School • Preparing for MLOps & AI Automation Internship
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#projects" class="btn btn-primary">View Projects</a>
-                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/vennelchenfoo" aria-label="GitHub" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/vennelchenfoo" aria-label="LinkedIn" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="image-wrapper">
-                        <div class="hero-graphic">
-                            <i class="fas fa-brain hero-icon"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        
+        <div class="social-links">
+            <a href="https://github.com/vennelchenfoo" class="social-link" target="_blank" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com/in/vennelchenfoo" class="social-link" target="_blank" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:vennel@vennelchenfoo.me" class="social-link" aria-label="Email">
+                <i class="fas fa-envelope"></i>
+            </a>
         </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Data Science & AI Bootcamp student at WBS Coding School in Germany, preparing for an MLOps and AI workflow automation internship scheduled for June-July 2026.</p>
-                    <p>Technical expertise in SQL, Python/Pandas, Tableau, n8n workflow automation, and AI agent creation. Actively building my professional presence to secure positions in the German tech market.</p>
-                    <p>Based in Lüneburg, Germany, with a background in advocacy work with Indigenous communities around educational access issues.</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat-card">
-                        <span class="stat-number">PCEP</span>
-                        <span class="stat-label">Python Certified</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">43</span>
-                        <span class="stat-label">Node IT Support Bot</span>
-                    </div>
-                    <div class="stat-card">
-                        <span class="stat-number">2022</span>
-                        <span class="stat-label">Kiron Learner</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">Skills & Technologies</h2>
-            <div class="skills-grid">
-                <!-- Skills will be dynamically loaded -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <!-- Projects will be dynamically loaded -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <p class="contact-intro">Currently seeking MLOps internship opportunities in Hamburg and Lüneburg</p>
-                <div class="contact-links">
-                    <a href="mailto:venz@vennelchenfoo.me" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i> Email Me
-                    </a>
-                    <a href="https://linkedin.com/in/vennelchenfoo" class="btn btn-secondary" target="_blank">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Venz. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript Files -->
-    <script src="js/main.js"></script>
-    <script src="js/components.js"></script>
+    </div>
 </body>
 </html>
