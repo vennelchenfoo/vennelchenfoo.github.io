@@ -1,0 +1,126 @@
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide In From Left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide In From Right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scale Up */
+@keyframes scaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Page Load Animations */
+.hero-text {
+    animation: slideInLeft 0.8s ease;
+}
+
+.hero-image {
+    animation: slideInRight 0.8s ease;
+}
+
+.navbar {
+    animation: fadeIn 0.6s ease;
+}
+
+/* Staggered Animations */
+.skill-card {
+    animation: scaleUp 0.5s ease;
+    animation-fill-mode: backwards;
+}
+
+.skill-card:nth-child(1) { animation-delay: 0.1s; }
+.skill-card:nth-child(2) { animation-delay: 0.2s; }
+.skill-card:nth-child(3) { animation-delay: 0.3s; }
+.skill-card:nth-child(4) { animation-delay: 0.4s; }
+.skill-card:nth-child(5) { animation-delay: 0.5s; }
+.skill-card:nth-child(6) { animation-delay: 0.6s; }
+.skill-card:nth-child(7) { animation-delay: 0.7s; }
+.skill-card:nth-child(8) { animation-delay: 0.8s; }
+
+.project-card {
+    animation: fadeIn 0.6s ease;
+    animation-fill-mode: backwards;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Pulse Animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.gradient-animated {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+}
+
+/* Loading Spinner */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    animation: spin 1s linear infinite;
+}
