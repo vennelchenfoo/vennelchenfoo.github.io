@@ -7,12 +7,10 @@ const portfolioData = {
         { name: 'Tableau', icon: 'fas fa-chart-bar', level: 'Intermediate' },
         { name: 'n8n', icon: 'fas fa-workflow', level: 'Advanced' },
         { name: 'AI Agents', icon: 'fas fa-robot', level: 'Intermediate' },
-        { name: 'Git', icon: 'fab fa-git-alt', level: 'Intermediate' },
-        { name: 'JavaScript', icon: 'fab fa-js', level: 'Beginner' }
     ],
     projects: [
         {
-            title: 'TruBot-IT Slack AI Agent',
+            title: 'Slack AI Agent',
             description: 'IT support automation workflow with RAG architecture, featuring 43 nodes for intelligent ticket routing and resolution',
             icon: 'fas fa-robot',
             technologies: ['n8n', 'RAG', 'AI', 'Slack API'],
